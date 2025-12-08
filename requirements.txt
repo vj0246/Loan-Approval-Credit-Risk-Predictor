@@ -1,0 +1,15 @@
+scikit-learn
+pandas
+numpy
+matplotlib  
+#pip install -r requirements.txt
+matplotlib
+seaborn
+bs4
+requests
+beautifulsoup4
+flask
+streamlit
+ipykernel
+autosklearn
+lazypredict
