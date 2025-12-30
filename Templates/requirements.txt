@@ -13,3 +13,5 @@ streamlit
 ipykernel
 autosklearn
 lazypredict
+tensorflow
+keras
