@@ -2,9 +2,6 @@ import pickle
 import streamlit as st
 import numpy as np
 
-# ----------------------------
-# Page Config
-# ----------------------------
 st.set_page_config(
     page_title="Loan Approval Credit Risk Predictor",
     layout="centered"
@@ -12,9 +9,6 @@ st.set_page_config(
 
 st.title("Loan Approval Credit Risk Predictor")
 
-# ----------------------------
-# Load Model & Scaler
-# ----------------------------
 @st.cache_resource
 def load_artifacts():
     model = pickle.load(open("Models/XgBoost.pkl", "rb"))
@@ -23,9 +17,6 @@ def load_artifacts():
 
 model, standard_scaler = load_artifacts()
 
-# ----------------------------
-# Input Form
-# ----------------------------
 with st.form("loan_form"):
     no_of_dependents = st.number_input("Number of Dependents", min_value=0, step=1)
     education = st.selectbox("Education", options=[0, 1], help="0: Not Graduate, 1: Graduate")
@@ -39,9 +30,6 @@ with st.form("loan_form"):
 
     submitted = st.form_submit_button("Predict Loan Approval")
 
-# ----------------------------
-# Prediction Logic
-# ----------------------------
 if submitted:
     try:
         input_data = np.array([[
